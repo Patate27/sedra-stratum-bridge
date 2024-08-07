@@ -1,4 +1,4 @@
-# Sendra (definitely not kaspa) Stratum Adapter
+# Sedra (definitely not kaspa) Stratum Adapter
 
 Shoutout to [@rdugan](https://github.com/rdugan), his real release should come out soon
 
@@ -55,7 +55,7 @@ Tips appreciated:
  pc             |     758.97MH/s |       1017/0/0 |            0 |      52m54s
 -------------------------------------------------------------------------------
                 |      44.12GH/s |       2200/0/0 |            1 |      53m20s
-========================================================== ks_bridge_v1.1.7 ===
+========================================================== sedra_bridge_v1.1.7 ===
 ```
 
 
@@ -73,29 +73,29 @@ Detailed setup [instructions](/docs/monitoring-setup.md)
 
 ### Prometheus API
 
-If the app is run with the `-prom={port}` flag the application will host stats on the port specified by `{port}`, these stats are documented in the file [prom.go](src/kaspastratum/prom.go). This is intended to be use by prometheus but the stats can be fetched and used independently if desired. `curl http://localhost:2114/metrics | grep ks_` will get a listing of current stats. All published stats have a `ks_` prefix for ease of use.
+If the app is run with the `-prom={port}` flag the application will host stats on the port specified by `{port}`, these stats are documented in the file [prom.go](src/sedrastratum/prom.go). This is intended to be use by prometheus but the stats can be fetched and used independently if desired. `curl http://localhost:2114/metrics | grep sedra_` will get a listing of current stats. All published stats have a `sedra_` prefix for ease of use.
 
 ```
-user:~$ curl http://localhost:2114/metrics | grep ks_
-# HELP ks_estimated_network_hashrate_gauge Gauge representing the estimated network hashrate
-# TYPE ks_estimated_network_hashrate_gauge gauge
-ks_estimated_network_hashrate_gauge 2.43428982879776e+14
-# HELP ks_network_block_count Gauge representing the network block count
-# TYPE ks_network_block_count gauge
-ks_network_block_count 271966
-# HELP ks_network_difficulty_gauge Gauge representing the network difficulty
-# TYPE ks_network_difficulty_gauge gauge
-ks_network_difficulty_gauge 1.2526479386202519e+14
-# HELP ks_valid_share_counter Number of shares found by worker over time
-# TYPE ks_valid_share_counter counter
-ks_valid_share_counter{ip="192.168.0.17",miner="SRBMiner-MULTI/1.0.8",wallet="kaspa:qzk3uh2twkhu0fmuq50mdy3r2yzuwqvstq745hxs7tet25hfd4egcafcdmpdl",worker="002"} 276
-ks_valid_share_counter{ip="192.168.0.24",miner="BzMiner-v11.1.0",wallet="kaspa:qzk3uh2twkhu0fmuq50mdy3r2yzuwqvstq745hxs7tet25hfd4egcafcdmpdl",worker="003"} 43
-ks_valid_share_counter{ip="192.168.0.65",miner="BzMiner-v11.1.0",wallet="kaspa:qzk3uh2twkhu0fmuq50mdy3r2yzuwqvstq745hxs7tet25hfd4egcafcdmpdl",worker="001"} 307
-# HELP ks_worker_job_counter Number of jobs sent to the miner by worker over time
-# TYPE ks_worker_job_counter counter
-ks_worker_job_counter{ip="192.168.0.17",miner="SRBMiner-MULTI/1.0.8",wallet="kaspa:qzk3uh2twkhu0fmuq50mdy3r2yzuwqvstq745hxs7tet25hfd4egcafcdmpdl",worker="002"} 3471
-ks_worker_job_counter{ip="192.168.0.24",miner="BzMiner-v11.1.0",wallet="kaspa:qzk3uh2twkhu0fmuq50mdy3r2yzuwqvstq745hxs7tet25hfd4egcafcdmpdl",worker="003"} 3399
-ks_worker_job_counter{ip="192.168.0.65",miner="BzMiner-v11.1.0",wallet="kaspa:qzk3uh2twkhu0fmuq50mdy3r2yzuwqvstq745hxs7tet25hfd4egcafcdmpdl",worker="001"} 3425
+user:~$ curl http://localhost:2114/metrics | grep sedra_
+# HELP sedra_estimated_network_hashrate_gauge Gauge representing the estimated network hashrate
+# TYPE sedra_estimated_network_hashrate_gauge gauge
+sedra_estimated_network_hashrate_gauge 2.43428982879776e+14
+# HELP sedra_network_block_count Gauge representing the network block count
+# TYPE sedra_network_block_count gauge
+sedra_network_block_count 271966
+# HELP sedra_network_difficulty_gauge Gauge representing the network difficulty
+# TYPE sedra_network_difficulty_gauge gauge
+sedra_network_difficulty_gauge 1.2526479386202519e+14
+# HELP sedra_valid_share_counter Number of shares found by worker over time
+# TYPE sedra_valid_share_counter counter
+sedra_valid_share_counter{ip="192.168.0.17",miner="SRBMiner-MULTI/1.0.8",wallet="kaspa:qzk3uh2twkhu0fmuq50mdy3r2yzuwqvstq745hxs7tet25hfd4egcafcdmpdl",worker="002"} 276
+sedra_valid_share_counter{ip="192.168.0.24",miner="BzMiner-v11.1.0",wallet="kaspa:qzk3uh2twkhu0fmuq50mdy3r2yzuwqvstq745hxs7tet25hfd4egcafcdmpdl",worker="003"} 43
+sedra_valid_share_counter{ip="192.168.0.65",miner="BzMiner-v11.1.0",wallet="kaspa:qzk3uh2twkhu0fmuq50mdy3r2yzuwqvstq745hxs7tet25hfd4egcafcdmpdl",worker="001"} 307
+# HELP sedra_worker_job_counter Number of jobs sent to the miner by worker over time
+# TYPE sedra_worker_job_counter counter
+sedra_worker_job_counter{ip="192.168.0.17",miner="SRBMiner-MULTI/1.0.8",wallet="kaspa:qzk3uh2twkhu0fmuq50mdy3r2yzuwqvstq745hxs7tet25hfd4egcafcdmpdl",worker="002"} 3471
+sedra_worker_job_counter{ip="192.168.0.24",miner="BzMiner-v11.1.0",wallet="kaspa:qzk3uh2twkhu0fmuq50mdy3r2yzuwqvstq745hxs7tet25hfd4egcafcdmpdl",worker="003"} 3399
+sedra_worker_job_counter{ip="192.168.0.65",miner="BzMiner-v11.1.0",wallet="kaspa:qzk3uh2twkhu0fmuq50mdy3r2yzuwqvstq745hxs7tet25hfd4egcafcdmpdl",worker="001"} 3425
 
 ```
 
@@ -105,13 +105,13 @@ ks_worker_job_counter{ip="192.168.0.65",miner="BzMiner-v11.1.0",wallet="kaspa:qz
 
 * Install go 1.18 or later using whatever package manager is approprate for your system, or from https://go.dev/doc/install.
 
-* run `cd cmd/kaspabridge;go build .`
+* run `cd cmd/sedrabridge;go build .`
 
 * Modify the config file in ./cmd/bridge/config.yaml with your setup, the file comments explain the various flags
 
-* run `./kaspabridge` in the `cmd/kaspabridge` directory
+* run `./sedrabridge` in the `cmd/sedrabridge` directory
 
-All-in-one (build + run) `cd cmd/kaspabridge/;go build .;./kaspabridge`
+All-in-one (build + run) `cd cmd/sedrabridge/;go build .;./sedrabridge`
 
 ## Option 2: Docker all-in-one
 
@@ -121,7 +121,7 @@ All-in-one (build + run) `cd cmd/kaspabridge/;go build .;./kaspabridge`
 
 * Clone this repository using git (`git clone https://github.com/Shadowofnight98/Sedra-stratum-bridge.git`) or download and unpack the [zip file](https://github.com/Shadowofnight98/Sedra-stratum-bridge/archive/refs/tags/Main.zip)
 
-* Enter the 'sedra-stratum-bridge' directory and type the command `docker compose -f docker-compose-all-src.yml up -d --build` [^1].  This will run the bridge assuming a local kaspad node with default port settings, and listen on port 5555 for incoming stratum connections.  These settings can be updated in the [config.yaml](cmd/kaspabridge/config.yaml) file, or overridden by modifying/adding/deleting the parameters in the 'command' section of the [docker-compose-all-src.yml](docker-compose-all-src.yml) file.  Additionally, Prometheus (the stats database) and Grafana (the dashboard) will be started and accessible on ports 9090 and 3000 respectively.  Once all services are running, the dashboard should be reachable at <http://127.0.0.1:3000/d/x7cE7G74k1/ksb-monitoring> with default user/pass: admin/admin
+* Enter the 'sedra-stratum-bridge' directory and type the command `docker compose -f docker-compose-all-src.yml up -d --build` [^1].  This will run the bridge assuming a local sedrad node with default port settings, and listen on port 5555 for incoming stratum connections.  These settings can be updated in the [config.yaml](cmd/sedrabridge/config.yaml) file, or overridden by modifying/adding/deleting the parameters in the 'command' section of the [docker-compose-all-src.yml](docker-compose-all-src.yml) file.  Additionally, Prometheus (the stats database) and Grafana (the dashboard) will be started and accessible on ports 9090 and 3000 respectively.  Once all services are running, the dashboard should be reachable at <http://127.0.0.1:3000/d/x7cE7G74k1/ksb-monitoring> with default user/pass: admin/admin
 
 [^1]: This command builds the bridge component from source, rather than the previous behavior of pulling down a pre-built image.  You may still use the pre-built image by replacing 'docker-compose-all-src.yml' with 'docker-compose-all.yml', but it is not guaranteed to be up to date, so compiling from source is the better alternative.
 
@@ -136,14 +136,14 @@ Many of the stats on the graph are averaged over a configurable time period (24h
 
 * Clone this repository using git (`git clone https://github.com/rdugan/kaspa-stratum-bridge.git`) or download and unpack the [zip file](https://github.com/rdugan/kaspa-stratum-bridge/archive/refs/heads/main.zip)
 
-* Enter the 'kaspa-stratum-bridge' directory and type the command `docker compose -f docker-compose-bridge-src.yml up -d --build` [^2]. This will run the bridge assuming a local kaspad node with default port settings, and listen on port 5555 for incoming stratum connections.  These settings can be updated in the [config.yaml](cmd/kaspabridge/config.yaml) file, or overridden by modifying/adding/deleting the parameters in the 'command' section of the [docker-compose-bridge-src.yml](docker-compose-bridge-src.yml) file.  No further services will be enabled.
+* Enter the 'sedra-stratum-bridge' directory and type the command `docker compose -f docker-compose-bridge-src.yml up -d --build` [^2]. This will run the bridge assuming a local kaspad node with default port settings, and listen on port 5555 for incoming stratum connections.  These settings can be updated in the [config.yaml](cmd/sedrabridge/config.yaml) file, or overridden by modifying/adding/deleting the parameters in the 'command' section of the [docker-compose-bridge-src.yml](docker-compose-bridge-src.yml) file.  No further services will be enabled.
 
-[^2]: This command builds the bridge component from source, rather than the previous behavior of pulling down a pre-built image.  You may still use the pre-built image by issuing the command `docker run -p 5555:5555 onemorebsmith/kaspa_bridge:latest`, but it is not guaranteed to be up to date, so compiling from source is the better alternative.
+[^2]: This command builds the bridge component from source, rather than the previous behavior of pulling down a pre-built image.  You may still use the pre-built image by issuing the command `docker run -p 5555:5555 sedra_bridge:latest`, but it is not guaranteed to be up to date, so compiling from source is the better alternative.
 
 
 # Configuration
 
-Configuration for the bridge is done via the [config.yaml](cmd/kaspabridge/config.yaml) file in the same directory as the executable, or `./cmd/kaspabridge` from the project root if building from source / using docker.  Available parameters are as follows:
+Configuration for the bridge is done via the [config.yaml](cmd/sedrabridge/config.yaml) file in the same directory as the executable, or `./cmd/sedrabridge` from the project root if building from source / using docker.  Available parameters are as follows:
 
 
 ```
@@ -152,11 +152,11 @@ Configuration for the bridge is done via the [config.yaml](cmd/kaspabridge/confi
 # Note `:PORT` format is needed if not specifiying a specific ip range 
 stratum_port: :5555
 
-# kaspad_address: address/port of the rpc server for kaspad, typically 16110
+# sedrad_address: address/port of the rpc server for kaspad, typically 16110
 # For a list of public nodes, run `nslookup mainnet-dnsseed.daglabs-dev.com` 
 # uncomment for to use a public node
-# kaspad_address: 46.17.104.200:16110
-kaspad_address: localhost:16110
+# sedrad_address: 46.17.104.200:16110
+sedrad_address: localhost:16110
 
 # min_share_diff: only accept shares of the specified difficulty (or higher) 
 # from the miner(s).  Higher values will reduce the number of shares submitted, 
@@ -205,7 +205,7 @@ shares_per_min: 20
 # var_diff_stats: if true, print vardiff engine stats to the log every 10s 
 var_diff_stats: false
 
-# block_wait_time: time to wait since last new block message from kaspad before
+# block_wait_time: time to wait since last new block message from sedrad before
 # manually requesting a new block.  Examples are '500ms', '3s', '1m', etc.
 block_wait_time: 3s
 
@@ -235,14 +235,14 @@ prom_port: :2114
 
 ```
 
-Config parameters can also be specificied by command line flags, which have slightly different names (these would be added in the 'command' subsection of the 'ks_bridge' section of the appropriate 'docker-compose-*.yml' file for docker installations.)  This method has precedence over the config.yaml file:
+Config parameters can also be specificied by command line flags, which have slightly different names (these would be added in the 'command' subsection of the 'sedra_bridge' section of the appropriate 'docker-compose-*.yml' file for docker installations.)  This method has precedence over the config.yaml file:
 
 ```
   - '-log=true' # enable/disable logging
   - '-stats=false' # include stats readout every 10s in log
   - '-stratum=:5555' # port to which miners should connect
   - '-prom=:2114' # port at which raw prometheus stats will be available
-  - '-kaspa=host.docker.internal:16110' # host/port at which kaspad node is running
+  - '-sedra=host.docker.internal:16110' # host/port at which sedrad node is running
   - '-mindiff=64' # minimum share difficulty to accept from miner(s)
   - '-vardiff=true' # enable auto-adjusting variable min diff
   - '-pow2clamp=false' # limit diff to 2^n (e.g. 64, 128, 256, etc)

@@ -1,4 +1,4 @@
-package kaspastratum
+package sedrastratum
 
 import (
 	"encoding/json"
@@ -8,10 +8,6 @@ import (
 	"net"
 	"testing"
 	"time"
-
-	"github.com/google/go-cmp/cmp"
-	"github.com/kaspanet/kaspad/app/appmessage"
-	"github.com/kaspanet/kaspad/util/difficulty"
 )
 
 func TestHeaderSerialization(t *testing.T) {
@@ -62,7 +58,7 @@ func TestHeaderSerialization(t *testing.T) {
 func TestPoolHzCalculation(t *testing.T) {
 	// TODO: figure out what we really want to test here.
 	// currently set up diff object to mimic old static settings
-	diff := newKaspaDiff()
+	diff := newSedraDiff()
 	diff.setDiffValue(4)
 	log.Println(diff.hashValue)
 	log.Println(diff.diffValue)

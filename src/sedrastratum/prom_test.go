@@ -1,10 +1,8 @@
-package kaspastratum
+package sedrastratum
 
 import (
-	"testing"
-
 	"github.com/kaspanet/kaspad/app/appmessage"
-	"github.com/onemorebsmith/kaspastratum/src/gostratum"
+	"sedrastratum/src/gostratum"
 )
 
 func TestPromValid(t *testing.T) {

@@ -1,4 +1,4 @@
-package kaspastratum
+package sedrastratum
 
 import (
 	"math/big"
@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/kaspanet/kaspad/app/appmessage"
-	"github.com/onemorebsmith/kaspastratum/src/gostratum"
+	"sedrastratum/src/gostratum"
 )
 
 const maxjobs = 32
@@ -19,7 +19,7 @@ type MiningState struct {
 	initialized bool
 	useBigJob   bool
 	connectTime time.Time
-	stratumDiff *kaspaDiff
+	stratumDiff *sedraDiff
 	maxJobs     uint8
 }
 

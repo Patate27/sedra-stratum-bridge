@@ -1,4 +1,4 @@
-package kaspastratum
+package sedrastratum
 
 import (
 	"context"
@@ -9,8 +9,8 @@ import (
 	"time"
 
 	"github.com/mattn/go-colorable"
-	"github.com/onemorebsmith/kaspastratum/src/gostratum"
-	"github.com/onemorebsmith/kaspastratum/src/utils"
+	"sedrastratum/src/gostratum"
+	"sedrastratum/src/utils"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 )
@@ -20,7 +20,7 @@ const minBlockWaitTime = 3 * time.Second
 
 type BridgeConfig struct {
 	StratumPort     string        `yaml:"stratum_port"`
-	RPCServer       string        `yaml:"kaspad_address"`
+	RPCServer       string        `yaml:"sedrad_address"`
 	PromPort        string        `yaml:"prom_port"`
 	PrintStats      bool          `yaml:"print_stats"`
 	UseLogFile      bool          `yaml:"log_to_file"`
@@ -72,7 +72,7 @@ func ListenAndServe(cfg BridgeConfig) error {
 	if blockWaitTime == 0 {
 		blockWaitTime = minBlockWaitTime
 	}
-	ksApi, err := NewKaspaAPI(cfg.RPCServer, blockWaitTime, logger)
+	ksApi, err := NewSedraAPI(cfg.RPCServer, blockWaitTime, logger)
 	if err != nil {
 		return err
 	}
@@ -85,7 +85,7 @@ func ListenAndServe(cfg BridgeConfig) error {
 		go http.ListenAndServe(cfg.HealthCheckPort, nil)
 	}
 
-	shareHandler := newShareHandler(ksApi.kaspad)
+	shareHandler := newShareHandler(ksApi.sedrad)
 	minDiff := float64(cfg.MinShareDiff)
 	if minDiff == 0 {
 		minDiff = 4

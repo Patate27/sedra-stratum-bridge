@@ -1,4 +1,4 @@
-module github.com/onemorebsmith/kaspastratum
+module sedrastratum
 
 go 1.18
 

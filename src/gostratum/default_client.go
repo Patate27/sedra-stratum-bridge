@@ -8,7 +8,7 @@ import (
 
 	"github.com/kaspanet/kaspad/util"
 	"github.com/mattn/go-colorable"
-	"github.com/onemorebsmith/kaspastratum/src/utils"
+	"sedrastratum/src/utils"
 	"github.com/pkg/errors"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
@@ -151,7 +151,7 @@ func CleanWallet(in string) (string, error) {
 		return CleanWallet("sedra:" + in)
 	}
 
-	// has kaspa: prefix but other weirdness somewhere
+	// has sedra: prefix but other weirdness somewhere
 	if walletRegex.MatchString(in) {
 		return in[0:67], nil
 	}
