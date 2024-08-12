@@ -22,7 +22,7 @@ Tips appreciated:
 - [@onemorebsmith](https://github.com/onemorebsmith): `kaspa:qp9v6090sr8jjlkq7r3f4h9un5rtfhu3raknfg3cca9eapzee57jzew0kxwlp`
 - [@rdugan](https://github.com/rdugan): `kaspa:qrkhyhej7h0gmmvsuf8mmufget4n4xnlwx5j360sz70q7xvu0hlaxfmt9p8j8`
 - [@lukewarmIQ](https://github.com/shadowofnight98): `sedra:qraz34m4j5977nx6pnerf5uchq5cspafnng77eyyega8y0atgc4f2y46d8kuc`
-- [@nullabit] (https://github.com/nullabit): `sedra:qzzwu2lpqx7pepwvhssajq5ra32qylcxwcurqrgnjxrqqx6k6k6cvkffx3an2`
+- [@nullabit](https://github.com/nullabit): `sedra:qzzwu2lpqx7pepwvhssajq5ra32qylcxwcurqrgnjxrqqx6k6k6cvkffx3an2`
 
 # Simpleguide:
 
