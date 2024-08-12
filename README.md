@@ -1,9 +1,11 @@
 # Sedra Stratum Adapter
 
-Shoutout to [@rdugan](https://github.com/rdugan), his real release should come out soon
+Modified from [@lukewarmIQ], this version replaces all references of Kaspa, KS_, kaspad; with: Sedra, sedra_ sedrad.
+The database for grafana has also been updated to reflect these changes. HiveOs and references to non-asic miners
+have been removed.
 
-Ignore the Readme except for docker setup, that is the only one I have tested but should work as intended.
-
+Shoutout to [@rdugan](https://github.com/rdugan), his real release should come out soon.
+- Ignore the Readme except for docker setup, that is the only one I have tested but should work as intended.
 
 This is a lightweight daemon that allows mining to a local (or remote) sedra node using stratum-base miners.
 
