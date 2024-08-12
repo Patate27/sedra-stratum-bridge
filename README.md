@@ -1,4 +1,4 @@
-# Sedra (definitely not kaspa) Stratum Adapter
+# Sedra Stratum Adapter
 
 Shoutout to [@rdugan](https://github.com/rdugan), his real release should come out soon
 
@@ -8,14 +8,9 @@ Ignore the Readme except for docker setup, that is the only one I have tested bu
 This is a lightweight daemon that allows mining to a local (or remote) sedra node using stratum-base miners.
 
 This daemon is confirmed working with the miners below in both sedra-only and dual-mining modes (for those that support it) on Windows/MacOs/Linux/HiveOs.
-* bzminer
-* lolminer
-* srbminer
-* teamreadminer
 * IceRiver ASICs <font size="1">[*(setup details)*](#iceriver-asics-configuration-details)</font>
 * Bitmain ASICS
 
-Hive setup: [detailed instructions here](docs/hive-setup.md) 
 
 Discord discussions/issues: [here](https://discord.com/channels/599153230659846165/1025501807570600027) 
 
@@ -25,6 +20,7 @@ Tips appreciated:
 - [@onemorebsmith](https://github.com/onemorebsmith): `kaspa:qp9v6090sr8jjlkq7r3f4h9un5rtfhu3raknfg3cca9eapzee57jzew0kxwlp`
 - [@rdugan](https://github.com/rdugan): `kaspa:qrkhyhej7h0gmmvsuf8mmufget4n4xnlwx5j360sz70q7xvu0hlaxfmt9p8j8`
 - [@lukewarmIQ](https://github.com/shadowofnight98): `sedra:qraz34m4j5977nx6pnerf5uchq5cspafnng77eyyega8y0atgc4f2y46d8kuc`
+- [@nullabit] (https://github.com/nullabit): `sedra:qzzwu2lpqx7pepwvhssajq5ra32qylcxwcurqrgnjxrqqx6k6k6cvkffx3an2`
 
 # Simpleguide:
 
