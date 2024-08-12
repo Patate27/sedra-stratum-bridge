@@ -1,6 +1,6 @@
 # Sedra Stratum Adapter
 
-Modified from [@lukewarmIQ], this version replaces all references of Kaspa, KS_, kaspad; with: Sedra, sedra_ sedrad.
+Modified from [@lukewarmIQ](https://github.com/shadowofnight98), this version replaces all references of Kaspa, KS_, kaspad; with: Sedra, sedra_ sedrad.
 The database for grafana has also been updated to reflect these changes. HiveOs and references to non-asic miners
 have been removed.
 
