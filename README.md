@@ -261,6 +261,7 @@ It is recommended to allow the variable difficulty engine to determine the prope
 | ----- | ---- |
 |KS0    |   64 |
 |KS0PRO |  128 |
+|KS0ULT |  256 |
 |KS1    |  512 |
 |KS2    | 1024 |
 |KS3L/M | 2048 |
