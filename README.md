@@ -117,7 +117,7 @@ All-in-one (build + run) `cd cmd/sedrabridge/;go build .;./sedrabridge`
   
 * [Install Docker](https://docs.docker.com/engine/install/) using the appropriate method for your OS.  The docker commands below are assuming a server type installation - details may be different for a desktop installation.
 
-* Clone this repository using git (`git clone https://github.com/Shadowofnight98/Sedra-stratum-bridge.git`) or download and unpack the [zip file](https://github.com/Shadowofnight98/Sedra-stratum-bridge/archive/refs/tags/Main.zip)
+* Clone this repository using git (`git clone https://github.com/nullabit/Sedra-stratum-bridge.git`) or download and unpack the [zip file](https://github.com/Shadowofnight98/Sedra-stratum-bridge/archive/refs/tags/Main.zip)
 
 * Enter the 'sedra-stratum-bridge' directory and type the command `docker compose -f docker-compose-all-src.yml up -d --build` [^1].  This will run the bridge assuming a local sedrad node with default port settings, and listen on port 5555 for incoming stratum connections.  These settings can be updated in the [config.yaml](cmd/sedrabridge/config.yaml) file, or overridden by modifying/adding/deleting the parameters in the 'command' section of the [docker-compose-all-src.yml](docker-compose-all-src.yml) file.  Additionally, Prometheus (the stats database) and Grafana (the dashboard) will be started and accessible on ports 9090 and 3000 respectively.  Once all services are running, the dashboard should be reachable at <http://127.0.0.1:3000/d/x7cE7G74k1/ksb-monitoring> with default user/pass: admin/admin
 
